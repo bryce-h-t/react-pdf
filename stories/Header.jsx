@@ -72,8 +72,4 @@ Header.defaultProps = {
   user: null,
 };
 
-<<<<<<< HEAD
 export default Header;
-=======
-export default Header;
->>>>>>> b4e2fe07ddb270c2acb8a4bfffecd1c3880edcf2
