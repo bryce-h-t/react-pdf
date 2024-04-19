@@ -39,18 +39,26 @@ const styles = StyleSheet.create({
   },
 });
 
-const Header = () => (
+const Header = ({ name, subtitle, contact }) => (
   <View style={styles.container}>
     <View style={styles.detailColumn}>
-      <Text style={styles.name}>Luke Skywalker</Text>
-      <Text style={styles.subtitle}>Jedi Master</Text>
+      <Text style={styles.name}>{name}</Text>
+      <Text style={styles.subtitle}>{subtitle}</Text>
     </View>
     <View style={styles.linkColumn}>
-      <Link href="mailto:luke@theforce.com" style={styles.link}>
-        luke@theforce.com
+      <Link href={`mailto:${contact.email}`} style={styles.link}>
+        {contact.email}
       </Link>
     </View>
   </View>
 );
+
+Header.defaultProps = {
+  name: 'Luke Skywalker',
+  subtitle: 'Jedi Master',
+  contact: {
+    email: 'luke@theforce.com',
+  },
+};
 
 export default Header;
