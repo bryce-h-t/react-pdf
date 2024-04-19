@@ -1,6 +1,6 @@
 import { join, dirname } from 'path';
-import customWebpackConfig from './webpack.config';
-import { merge } from 'webpack-merge';
+// import customWebpackConfig from './webpack.config';
+// import { mergeWithCustomize, customizeArray } from 'webpack-merge';
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -34,9 +34,13 @@ const config = {
   },
   webpackFinal: async (config, { configType }) => {
     // Log the final merged webpack configuration to the console
-    const finalConfig = merge(config, customWebpackConfig({ config }));
-    console.log('Final Webpack Config:', finalConfig);
-    return finalConfig;
+    // const finalConfig = mergeWithCustomize({
+    //   customizeArray: customizeArray({
+    //     'entry': 'replace' // This will replace the entry array instead of merging it
+    //   })
+    // })(config, customWebpackConfig({ config }));
+    // console.log('Final Webpack Config:', finalConfig);
+    return config;
   },
 };
 export default config;

@@ -7,7 +7,11 @@ export default {
   component: Skills,
 } as Meta;
 
-const Template: Story<typeof Skills> = (args) => <Skills {...args} />;
+const Template: Story<typeof Skills> = (args) => {
+  // Log the args to the console
+  console.log(args, 'args');
+  return <Skills {...args} />;
+};
 
 export const Default = Template.bind({});
 Default.args = {

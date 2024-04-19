@@ -118,3 +118,20 @@ MoistureFarmHand.args = {
     },
   ],
 };
+
+// New story added for testing different experience data
+export const DroidTechnician = Template.bind({});
+DroidTechnician.args = {
+  experienceData: [
+    {
+      company: 'Droid Repair Bay, Mos Eisley',
+      date: 'A long time ago...',
+      details: [
+        'Diagnosed and repaired a wide range of droid models',
+        'Managed inventory of spare parts and placed orders for new supplies',
+        'Trained junior technicians in droid maintenance protocols',
+      ],
+      position: 'Lead Droid Technician',
+    },
+  ],
+};

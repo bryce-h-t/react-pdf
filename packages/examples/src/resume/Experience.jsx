@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, View, StyleSheet } from '@react-pdf/renderer';
+import Text from './__mocks__/Text';
+import View from './__mocks__/View';
+import StyleSheet from './__mocks__/StyleSheet';
 
 import Title from './Title';
 import List, { Item } from './List';

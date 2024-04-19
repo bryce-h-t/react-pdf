@@ -1,5 +1,7 @@
 import React from 'react';
-import { Text, View, StyleSheet } from '@react-pdf/renderer';
+import Text from './__mocks__/Text';
+import View from './__mocks__/View';
+import StyleSheet from './__mocks__/StyleSheet';
 
 import Title from './Title';
 import List, { Item } from './List';
@@ -21,8 +23,8 @@ const SkillEntry = ({ name, skills }) => (
   <View>
     <Text style={styles.title}>{name}</Text>
     <List>
-      {skills.map((skill, index) => (
-        <Item key={index}>{skill}</Item>
+      {skills.map((skill) => (
+        <Item key={skill}>{skill}</Item>
       ))}
     </List>
   </View>
@@ -31,8 +33,8 @@ const SkillEntry = ({ name, skills }) => (
 const Skills = ({ skills }) => (
   <View>
     <Title>Skills</Title>
-    {skills.map((skillSet, index) => (
-      <SkillEntry key={index} name={skillSet.name} skills={skillSet.skills} />
+    {skills.map((skillSet) => (
+      <SkillEntry key={skillSet.name} name={skillSet.name} skills={skillSet.skills} />
     ))}
   </View>
 );

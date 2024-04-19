@@ -1,5 +1,8 @@
 import React from 'react';
-import { Link, Text, View, StyleSheet } from '@react-pdf/renderer';
+import Text from './__mocks__/Text';
+import View from './__mocks__/View';
+import StyleSheet from './__mocks__/StyleSheet';
+import Link from './__mocks__/Link';
 
 const styles = StyleSheet.create({
   container: {
