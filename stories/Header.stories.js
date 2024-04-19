@@ -13,6 +13,15 @@ export default {
     onLogout: fn(),
     onCreateAccount: fn(),
   },
+  argTypes: {
+    user: {
+      control: 'object',
+      description: 'User details object with name',
+    },
+    onLogin: { action: 'onLogin' },
+    onLogout: { action: 'onLogout' },
+    onCreateAccount: { action: 'onCreateAccount' },
+  },
 };
 
 export const LoggedIn = {
