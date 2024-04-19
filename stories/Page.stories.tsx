@@ -1,4 +1,5 @@
 /** @jsxImportSource react */
+import React from 'react';
 import Page from './Page';
 
 export default {
@@ -13,7 +14,7 @@ Default.args = {};
 
 export const UserLoggedIn = Template.bind({});
 UserLoggedIn.args = {
-  user: { name: 'Jane Doe' },
+  user: 'Jane Doe',
 };
 
 export const UserLoggedOut = Template.bind({});
@@ -23,7 +24,7 @@ UserLoggedOut.args = {
 
 export const UserCreatingAccount = Template.bind({});
 UserCreatingAccount.args = {
-  user: { name: 'John Doe' },
+  user: 'John Doe',
 };
 
 export const PageWithCustomHeader = Template.bind({});

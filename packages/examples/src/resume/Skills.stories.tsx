@@ -8,8 +8,6 @@ export default {
 } as Meta;
 
 const Template: Story<typeof Skills> = (args) => {
-  // Log the args to the console
-  console.log(args, 'args');
   return <Skills {...args} />;
 };
 

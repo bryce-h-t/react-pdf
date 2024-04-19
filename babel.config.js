@@ -18,4 +18,5 @@ export default {
     ['@babel/plugin-proposal-class-properties', { loose: true }],
     '@babel/plugin-proposal-optional-chaining',
   ],
+  babelrc: false,
 };
