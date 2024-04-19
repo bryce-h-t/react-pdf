@@ -13,7 +13,8 @@
     "plugin:react/recommended",
     "airbnb",
     "prettier",
-    "plugin:react/jsx-runtime"
+    "plugin:react/jsx-runtime",
+    "plugin:storybook/recommended"
   ],
   "globals": {
     "URL": false,
@@ -21,15 +22,25 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "plugins": ["react"],
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "arrow-body-style": 0,
     "default-case-last": 0,
     "default-param-last": 0,
     "func-names": 0,
     "import/no-named-as-default": 0,
-    "import/no-unresolved": ["error", { "ignore": ["^yoga-layout"] }],
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": [
+          "^yoga-layout"
+        ]
+      }
+    ],
     "no-cond-assign": 1,
+    "no-console": 1,
     "no-continue": 1,
     "no-promise-executor-return": 0,
     "no-underscore-dangle": 0,
