@@ -35,7 +35,7 @@ const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
         {user ? (
           <>
             <span className="welcome">
-              Welcome, <b>{user.name}</b>!
+              Welcome, <b>{user}</b>!
             </span>
             <button type="button" className="small" onClick={onLogout}>
               Log out
@@ -61,9 +61,7 @@ const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 );
 
 Header.propTypes = {
-  user: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-  }),
+  user: PropTypes.string,
   onLogin: PropTypes.func.isRequired,
   onLogout: PropTypes.func.isRequired,
   onCreateAccount: PropTypes.func.isRequired,
