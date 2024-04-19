@@ -1,4 +1,5 @@
 import { join, dirname } from 'path';
+import customWebpackConfig from './webpack.config';
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -29,6 +30,9 @@ const config = {
   },
   docs: {
     autodocs: 'tag',
+  },
+  webpackFinal: async (config, { configType }) => {
+    return { ...config, ...customWebpackConfig({ config }) };
   },
 };
 export default config;
