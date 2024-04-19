@@ -33,7 +33,10 @@ const config = {
     autodocs: 'tag',
   },
   webpackFinal: async (config, { configType }) => {
-    return merge(config, customWebpackConfig({ config }));
+    // Log the final merged webpack configuration to the console
+    const finalConfig = merge(config, customWebpackConfig({ config }));
+    console.log('Final Webpack Config:', finalConfig);
+    return finalConfig;
   },
 };
 export default config;
