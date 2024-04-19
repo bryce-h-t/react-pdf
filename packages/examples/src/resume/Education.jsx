@@ -21,13 +21,19 @@ const styles = StyleSheet.create({
   },
 });
 
-const Education = () => (
+const Education = ({ school, degree, candidate }) => (
   <View style={styles.container}>
     <Title>Education</Title>
-    <Text style={styles.school}>Jedi Academy</Text>
-    <Text style={styles.degree}>Jedi Master</Text>
-    <Text style={styles.candidate}>A long, long time ago</Text>
+    <Text style={styles.school}>{school}</Text>
+    <Text style={styles.degree}>{degree}</Text>
+    <Text style={styles.candidate}>{candidate}</Text>
   </View>
 );
+
+Education.defaultProps = {
+  school: 'Jedi Academy',
+  degree: 'Jedi Master',
+  candidate: 'A long, long time ago',
+};
 
 export default Education;
