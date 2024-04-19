@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import TestComponent from './TestComponent';
 
@@ -10,4 +9,8 @@ export default {
 const Template = (args) => <TestComponent {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  text: 'Test Component',
+  active: true,
+  count: 0,
+};
