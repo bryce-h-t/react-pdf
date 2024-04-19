@@ -14,8 +14,6 @@ export const LoggedOut = {
 
 export const LoggedIn = {
   args: {
-    user: {
-      name: 'Jane Doe',
-    },
+    user: 'Jane Doe',
   },
 };
