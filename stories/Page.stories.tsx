@@ -24,7 +24,7 @@ UserLoggedOut.args = {
 
 export const UserCreatingAccount = Template.bind({});
 UserCreatingAccount.args = {
-  user: 'John Doe',
+  // Removed the user property to indicate that the user is not logged in yet
 };
 
 export const PageWithCustomHeader = Template.bind({});
