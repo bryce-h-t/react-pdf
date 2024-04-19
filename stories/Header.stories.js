@@ -15,8 +15,8 @@ export default {
   },
   argTypes: {
     user: {
-      control: 'object',
-      description: 'User details object with name',
+      control: 'text',
+      description: 'User name for logged in state',
     },
     onLogin: { action: 'onLogin' },
     onLogout: { action: 'onLogout' },
@@ -26,14 +26,12 @@ export default {
 
 export const LoggedIn = {
   args: {
-    user: {
-      name: 'Jane Doe',
-    },
+    user: 'Jane Doe',
   },
 };
 
 export const LoggedOut = {
   args: {
-    user: undefined,
+    user: '',
   },
 };
