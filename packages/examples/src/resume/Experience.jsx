@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Text from './__mocks__/Text';
-import View from './__mocks__/View';
-import StyleSheet from './__mocks__/StyleSheet';
+import { Text, View, StyleSheet } from '@react-pdf/renderer';
 
 import Title from './Title';
 import List, { Item } from './List';
@@ -12,7 +10,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 30,
     paddingLeft: 15,
-    '@media max-width: 400': {
+    '@media (max-width: 400px)': {
       paddingTop: 10,
       paddingLeft: 0,
     },
@@ -112,7 +110,7 @@ Experience.propTypes = {
       date: PropTypes.string.isRequired,
       details: PropTypes.arrayOf(PropTypes.string).isRequired,
       position: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
 };
 

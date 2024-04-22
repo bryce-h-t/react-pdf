@@ -8,7 +8,6 @@ export default {
 } as Meta;
 
 const Template: Story<typeof Title> = (args) => {
-  console.log(args, 'args');
   return <Title {...args} />;
 };
 

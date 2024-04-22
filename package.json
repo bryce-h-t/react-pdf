@@ -27,11 +27,13 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@storybook/core-common": "8.0.9",
+    "prop-types": "^15.8.1",
     "webpack-merge": "^5.10.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.20.7",
-    "@babel/core": "^7.20.7",
+    "@babel/core": "7.24.4",
     "@babel/eslint-parser": "^7.24.1",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-decorators": "^7.20.13",
@@ -43,7 +45,7 @@
     "@changesets/cli": "^2.26.0",
     "@chromatic-com/storybook": "^1.3.3",
     "@rollup/plugin-alias": "^5.1.0",
-    "@rollup/plugin-babel": "^6.0.0",
+    "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.0",
@@ -55,7 +57,7 @@
     "@storybook/addon-onboarding": "^8.0.8",
     "@storybook/addon-webpack5-compiler-swc": "^1.0.2",
     "@storybook/blocks": "^8.0.8",
-    "@storybook/react": "^8.0.8",
+    "@storybook/react": "^8.0.9",
     "@storybook/react-webpack5": "^8.0.8",
     "@testing-library/react": "^14.0.0",
     "@typescript-eslint/parser": "^6.21.0",

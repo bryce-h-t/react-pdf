@@ -76,7 +76,7 @@ Font.register({
   src: `https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA.ttf`,
 });
 
-const Resume = (props) => (
+const Resume = ({ experienceData, ...props }) => (
   <Page {...props} style={styles.page}>
     <Header />
     <View style={styles.container}>
@@ -88,7 +88,7 @@ const Resume = (props) => (
         <Education />
         <Skills />
       </View>
-      <Experience />
+      <Experience experienceData={experienceData} />
     </View>
     <Text style={styles.footer}>This IS the candidate you are looking for</Text>
   </Page>

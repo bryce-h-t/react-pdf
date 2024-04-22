@@ -7,7 +7,13 @@ module.exports = ({ config }) => {
       ...config.resolve,
       alias: {
         ...config.resolve.alias,
-        '@react-pdf/renderer': path.resolve(__dirname, '..', 'packages', 'examples', 'src', 'resume', '__mocks__'),
+        '@react-pdf/renderer': path.resolve(
+          __dirname,
+          '..',
+          'node_modules',
+          '@react-pdf',
+          'renderer',
+        ),
       },
     },
   };

@@ -29,10 +29,11 @@ const nodeInput = './src/node/index.js';
 const domInput = './src/dom/index.js';
 
 const babelConfig = () => ({
-  babelrc: true,
+  babelrc: false,
   exclude: 'node_modules/**',
   babelHelpers: 'runtime',
   presets: [['@babel/preset-react', { runtime: 'automatic' }]],
+  plugins: [['@babel/plugin-transform-runtime', { version: '^7.19.6' }]],
 });
 
 const getExternal = ({ browser }) => [

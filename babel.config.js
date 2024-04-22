@@ -5,7 +5,7 @@ export default {
       {
         loose: true,
         targets: {
-          node: '14',
+          node: 'current',
           browsers: 'last 2 versions',
         },
       },
@@ -13,7 +13,7 @@ export default {
     ['@babel/preset-react', { runtime: 'automatic' }],
   ],
   plugins: [
-    ['@babel/plugin-transform-runtime', { version: '^7.19.6' }],
+    '@babel/plugin-transform-runtime',
     ['@babel/plugin-proposal-decorators', { legacy: true }],
     ['@babel/plugin-proposal-class-properties', { loose: true }],
     '@babel/plugin-proposal-optional-chaining',
