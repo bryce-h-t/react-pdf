@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, StyleSheet } from '@react-pdf/renderer';
+import Text from './__mocks__/Text';
+import StyleSheet from './__mocks__/StyleSheet';
 
 const styles = StyleSheet.create({
   title: {

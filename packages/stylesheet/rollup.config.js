@@ -27,9 +27,10 @@ const getExternal = () => [
 const getPlugins = () => [
   localResolve(),
   babel({
-    babelrc: true,
+    babelrc: false,
     babelHelpers: 'runtime',
     exclude: 'node_modules/**',
+    plugins: [['@babel/plugin-transform-runtime', { version: '^7.19.6' }]],
   }),
 ];
 

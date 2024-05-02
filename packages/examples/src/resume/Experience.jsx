@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, View, StyleSheet } from '@react-pdf/renderer';
 
 import Title from './Title';
@@ -9,7 +10,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 30,
     paddingLeft: 15,
-    '@media max-width: 400': {
+    '@media (max-width: 400px)': {
       paddingTop: 10,
       paddingLeft: 0,
     },
@@ -73,69 +74,44 @@ const ExperienceEntry = ({ company, details, position, date }) => {
       </View>
       <List>
         {details.map((detail) => (
-          <Item key={detail.company}>{detail}</Item>
+          <Item key={detail}>{detail}</Item>
         ))}
       </List>
     </View>
   );
 };
 
-const experienceData = [
-  {
-    company: 'Jedi Temple, Coruseant',
-    date: 'A long time ago...',
-    details: [
-      'Started a new Jedi Temple in order to train the next generation of Jedi Masters',
-      'Discovered and trained a new generation of Jedi Knights, which he recruited from within the New Republic',
-      'Communicates with decesased Jedi Masters such as Anakin Skywalker, Yoda, Obi-Wan Kenobi in order to learn the secrets of the Jedi Order',
-    ],
-    position: 'Head Jedi Master',
-  },
-  {
-    company: 'Rebel Alliance',
-    date: 'A long time ago...',
-    details: [
-      'Lead legions of troops into battle while demonstrating bravery, competence and honor',
-      'Created complicated battle plans in conjunction with other Rebel leaders in order to ensure the greatest chance of success',
-      'Defeated Darth Vader in single-combat, and convinced him to betray his mentor, the Emperor',
-    ],
-    position: 'General',
-  },
-  {
-    company: 'Rebel Alliance',
-    date: 'A long time ago...',
-    details: [
-      'Destroyed the Death Star by using the force to find its only weakness and delivering a torpedo into the center of the ship',
-      'Commanded of squadron of X-Wings into battle',
-      'Defeated an enemy AT-AT single handedly after his ship was destroyed',
-      'Awarded a medal for valor and bravery in battle for his successful destruction of the Death Star',
-    ],
-    position: 'Lieutenant Commander',
-  },
-  {
-    company: 'Tatooine Moisture Refinery',
-    date: 'A long time ago...',
-    details: [
-      'Replaced damaged power converters',
-      'Performed menial labor thoughout the farm in order to ensure its continued operation',
-    ],
-    position: 'Moisture Farmer',
-  },
-];
+ExperienceEntry.propTypes = {
+  company: PropTypes.string.isRequired,
+  details: PropTypes.arrayOf(PropTypes.string).isRequired,
+  position: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+};
 
-const Experience = () => (
+const Experience = ({ experienceData }) => (
   <View style={styles.container}>
     <Title>Experience</Title>
-    {experienceData.map(({ company, date, details, position }) => (
+    {experienceData.map((entry) => (
       <ExperienceEntry
-        company={company}
-        date={date}
-        details={details}
-        key={company + position}
-        position={position}
+        key={entry.company + entry.position}
+        company={entry.company}
+        date={entry.date}
+        details={entry.details}
+        position={entry.position}
       />
     ))}
   </View>
 );
+
+Experience.propTypes = {
+  experienceData: PropTypes.arrayOf(
+    PropTypes.shape({
+      company: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      details: PropTypes.arrayOf(PropTypes.string).isRequired,
+      position: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
 
 export default Experience;

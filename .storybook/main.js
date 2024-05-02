@@ -1,4 +1,6 @@
 import { join, dirname } from 'path';
+// import customWebpackConfig from './webpack.config';
+// import { mergeWithCustomize, customizeArray } from 'webpack-merge';
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -13,6 +15,7 @@ const config = {
   stories: [
     '../stories/**/*.mdx',
     '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../packages/examples/src/resume/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
     getAbsolutePath('@storybook/addon-webpack5-compiler-swc'),
@@ -28,6 +31,16 @@ const config = {
   },
   docs: {
     autodocs: 'tag',
+  },
+  webpackFinal: async (config, { configType }) => {
+    // Log the final merged webpack configuration to the console
+    // const finalConfig = mergeWithCustomize({
+    //   customizeArray: customizeArray({
+    //     'entry': 'replace' // This will replace the entry array instead of merging it
+    //   })
+    // })(config, customWebpackConfig({ config }));
+    // console.log('Final Webpack Config:', finalConfig);
+    return config;
   },
 };
 export default config;

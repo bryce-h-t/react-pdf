@@ -16,9 +16,10 @@ const getCJS = (override) => Object.assign({}, cjs, override);
 const getESM = (override) => Object.assign({}, esm, override);
 
 const babelConfig = () => ({
-  babelrc: true,
+  babelrc: false,
   exclude: 'node_modules/**',
   babelHelpers: 'runtime',
+  plugins: [['@babel/plugin-transform-runtime', { version: '^7.19.6' }]],
 });
 
 const external = [/@babel\/runtime/, ...Object.keys(pkg.dependencies)];

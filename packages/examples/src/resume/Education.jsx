@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, View, StyleSheet } from '@react-pdf/renderer';
-
 import Title from './Title';
+import Text from './__mocks__/Text';
+import View from './__mocks__/View';
+import StyleSheet from './__mocks__/StyleSheet';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,13 +22,19 @@ const styles = StyleSheet.create({
   },
 });
 
-const Education = () => (
+const Education = ({ school, degree, candidate }) => (
   <View style={styles.container}>
     <Title>Education</Title>
-    <Text style={styles.school}>Jedi Academy</Text>
-    <Text style={styles.degree}>Jedi Master</Text>
-    <Text style={styles.candidate}>A long, long time ago</Text>
+    <Text style={styles.school}>{school}</Text>
+    <Text style={styles.degree}>{degree}</Text>
+    <Text style={styles.candidate}>{candidate}</Text>
   </View>
 );
+
+Education.defaultProps = {
+  school: 'Jedi Academy',
+  degree: 'Jedi Master',
+  candidate: 'A long, long time ago',
+};
 
 export default Education;
